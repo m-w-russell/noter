@@ -1,6 +1,6 @@
 #Formatting Info:
 
-#Prefixes:
+###Prefixes:
 \# - Heading 1
 \## - Heading 2
 \###- Heading 3
@@ -10,7 +10,8 @@
 \]] - Nested Bullet 1
 \]]] - Nested bullet 2
 
-## Displays as:
+###Outputs:
+
 #Heading 1
 ##Heading 2
 ###Heading 3
@@ -20,9 +21,13 @@
 ]] Nested Bullet 1
 ]]] Nested bullet 2
 
-#Inline Formatting
+
+<hr>
+###Inline Formatting
 inline \*bold\*
 Becomes inline *bold*
+
+<hr>
 
 ##Shortcuts:
 ] F1 : Save

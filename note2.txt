@@ -1,0 +1,56 @@
+!COSC 265
+
+#Required Textbook:
+Fundamentals of Database Systems (earlier editions OK) by Elmasri & Navathe
+
+
+#Grading:
+- Assignment 1: 8%
+- Assignment 2: 16%
+- Quizzes: 6%
+- Lab Test: 20%
+- Final Exam: 50%
+
+<hr>
+!Section 1: Intoduction to Databases
+
+
+@Part 1: Data Management
+
+$Data Management Operations
+- Accuracy
+- Up to date
+- Accessibilty
+- Easse of access
+- Organised
+- Secure
+
+$Files
+- Unstructured
+- Structered
+=] Record
+=] Field
+==] Alphanumeric
+==] Numeric
+==] Currency
+==] Date
+==] Memo
+==]...
+
+
+$Conventional Data Processing
+- Several programs for each application
+- One oro more files for each application
+- Programmers must write their own programs for accessing, inserting and updating files
+
+
+#DATABASES
+- A collection of related data
+- <b>Miniworld</b>: A part of the real world about which data is stored in the database
+
+$Database Management System
+Also called DBMS
+A software system to facilitate the creation and maintenance of a computerized database
+Database Software = DBMS + Applications
+Database System = Database + Software
+$DBMS for the course: Oracle Database

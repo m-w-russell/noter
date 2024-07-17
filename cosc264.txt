@@ -1,0 +1,70 @@
+#COSC264 Computer Networks
+
+
+##Transmission Media
+Data transmission is based on the propagation of *signals* or *waves* through a medium
+Main cases of interest:
+]] Acoustic signals
+]] Electromagnetic signals (Wi-Fi, Bluetooth, etc.)
+These signals have different transmission speeds (Acoustic at speed of sound, Electromagnetic at speed of light, etc.)
+A sender generates a carrier signal and *modulates* it according to the information that needs to be transmitted. The transmission medium distorts and attenuates the signal, so the reciever needs to guess the information to restore the undistorted source signal.
+
+###Guided Transmission Media
+In *guided media* a data signal can only propagate in a confined space, e.g. throough a cable.
+
+*Twisted-Pair copper wire*:
+] Used as phone cabling and some Ethernet
+] Susceptible to EM interference
+] Only connects two stations
+] Data rates / ranges: up to 10's of GB/s over short range (10s of m)
+
+ *Coaxial cable*
+] Used in cable TV and cable Internet
+] Better shielding
+] Difficult to handle (poor bend radius etc.)
+] Several stations can be attached
+] Data rates / ranges: 10's of MB/s over a few hundred m
+
+*Fiber Optics*
+] Commonly used in Internet core
+] Difficult to handle
+] Only connects two stations
+] Immune to EM interference
+] Data rates / ranges: 10s of GB/s up to multiple TB/s, tens to hundreds of km
+
+###Unguided Transmission Media
+In unguided media, signal propagates in *all directions*
+
+*Acoustic transmission (air / water)*1
+] Data rates / ranges: 10s to 100s KB/s, 100s of m, few km
+
+*Terrestial radio*
+] Uses radio frequencies (RF bands go from 20 KHz to 300 GHz, practical bands are sub-100 GHZ)
+] Used for access networks
+] Supports mobile hosts and clients
+] Eg. WiFi, Mobile Broadband
+] Data rates / distances: Depends on band used, e.g. 10s of m for wifi but a few km for WWAN.
+] Saves on expensive cabling
+
+*Satellite radio* 
+] Links two far away ground stations over very long distance
+] Broadcast signals e.g. satellite TV
+] Long range phone e.g. emergency phone
+] GEO vs LEO
+]] GEO satellites are stationary relative to ground, but slow link speed
+]] LEO have faster, lower latency link BUT move fast so many satellites are needed for consistent coverage
+] Iridium, Starlink, CubeSat
+
+###Bit Errors
+] Signal is distorted during transmission
+] Reciever must guess the distorted bits
+] Rate at which it guesses wrong is called *bit error rate*
+
+*Packet Loss*
+] Retransmit damaged packets
+] re fill this shit later
+
+###Throughput
+] Need to choose a definition for throughput
+] Measures the amount of data recieved per unit of time
+

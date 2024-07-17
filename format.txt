@@ -1,0 +1,30 @@
+#Formatting Info:
+
+#Prefixes:
+\# - Heading 1
+\## - Heading 2
+\###- Heading 3
+\#### - Heading 4
+
+\] - Bulleted List
+\]] - Nested Bullet 1
+\]]] - Nested bullet 2
+
+## Displays as:
+#Heading 1
+##Heading 2
+###Heading 3
+####Heading 4
+
+] Bullet Point
+]] Nested Bullet 1
+]]] Nested bullet 2
+
+#Inline Formatting
+inline \*bold\*
+Becomes inline *bold*
+
+##Shortcuts:
+] F1 : Save
+] F5: Render Notes
+

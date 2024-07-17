@@ -1,0 +1,39 @@
+body {
+    font: 14pt "Roboto Light", sans-serif;
+    color: #505050;
+    background-color:#fffef8;
+
+
+}
+
+h1 {
+    color: #fffef8;
+    background-color: #12385f;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #fffef8;
+    background-color: #12385f;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h3 {
+    color: #fffef8;
+    background-color: #505050;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+h4 {
+    color: #fffef8;
+    background-color: #505050;
+    padding: 4px;
+    border-radius: 2px;
+}
+
+div {
+    padding: 20px;
+}

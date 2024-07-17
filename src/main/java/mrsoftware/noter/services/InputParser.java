@@ -74,11 +74,9 @@ public class InputParser {
 
             if (inlineMap.containsKey(symbol)) {
                 if (!symbolStack.isEmpty()) {
-                    System.out.println(symbol);
                     Character stackSymbol = symbolStack.get(symbolStack.size()-1);
                     if (stackSymbol == '\\') {
                         output.append(symbol);
-                        System.out.println(symbol);
                     }
 
                     else if (symbol == stackSymbol) {

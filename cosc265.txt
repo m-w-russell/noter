@@ -70,3 +70,49 @@ Database System = Database + Software
 ] Data Integrity
 ] Data independence
 
+
+##Phases of Database Design
+
+] Requirements Collection & Analysis
+] Conceptual design
+]] Logical Design
+]] Physical design
+] Functional Analysis
+]] Application Program Design
+] Transaction Implementation
+
+
+###Methodologies for Conceptual Design
+] Entity Relationship Diagrams
+] Enhanced Entity Relationship
+] Use of Design Tools
+] UML Class Diagrams
+
+
+###Entities and Attributes
+] *Entities* are specific objects or things in the mini-world that are represented in the database
+] *Attributes* are properties used to describe an enemy
+] Each attribute has a *domain* (value set)
+
+*Types of Attributes*
+] *Simple (atomic) or Composite*
+]] Gender is a *simple* attribute
+]] Name (FirstName, LastName) is composite
+] *Single/Multi Valued*
+]] PreviousDegrees of a STUDENT
+]] Denoted as {PreviousDegrees}
+
+An attribute can be a combination of these, e.g. an attribute can be *composite* and *multi-valued*. Degrees of a STUDENT is a composite multi-valued attribute denoted by {Degrees(University, Year, Degree, Field)}
+
+*The NULL Value*
+There are three possible interpretations of a *NULL* value:
+] Not known
+] Not applicable
+] Missing
+
+*Entity Types and Key Attributes*
+An *entity type* is a group of entities with the same attributes. An attribute of an entity type for which each individual entity must have a *unique* value is called a *key attribute*, e.g. student numbers, student usernames, IRD numbers, email addresses, employee codes, etc. An entity type can have ^*more* than one^ key attribute under the EER model.
+
+
+##Relationships
+A relationship relates two or ore distinct *entities* with a specific meaning. e.g. ^john smith^ works on ^ProductX^. Relationships of the same *type* are grouped into a *relationship type*.

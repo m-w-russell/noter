@@ -19,6 +19,7 @@ public class InputParser {
         prefixMap.put("\\", new String[] {"", ""});
 
         inlineMap.put('*', new String[] {"<b>", "</b>"});
+        inlineMap.put('^', new String[] {"<i>", "</i>"});
     }
 
 

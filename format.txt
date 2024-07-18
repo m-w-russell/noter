@@ -27,6 +27,15 @@
 inline \*bold\*
 Becomes inline *bold*
 
+inline \^italics\^
+Becomes inline ^italics^
+
+Combinable:
+inline \*\^bold italic text \^\*
+inline *^bold italic text^*
+
+use backslash as an escape character
+
 <hr>
 
 ##Shortcuts:

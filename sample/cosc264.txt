@@ -1,0 +1,143 @@
+#COSC264 Computer Networks
+
+
+##Transmission Media
+Data transmission is based on the propagation of *signals* or *waves* through a medium
+Main cases of interest:
+]] Acoustic signals
+]] Electromagnetic signals (Wi-Fi, Bluetooth, etc.)
+These signals have different transmission speeds (Acoustic at speed of sound, Electromagnetic at speed of light, etc.)
+A sender generates a carrier signal and *modulates* it according to the information that needs to be transmitted. The transmission medium distorts and attenuates the signal, so the reciever needs to guess the information to restore the undistorted source signal.
+
+###Guided Transmission Media
+In *guided media* a data signal can only propagate in a confined space, e.g. throough a cable.
+
+*Twisted-Pair copper wire*:
+] Used as phone cabling and some Ethernet
+] Susceptible to EM interference
+] Only connects two stations
+] Data rates / ranges: up to 10's of GB/s over short range (10s of m)
+
+ *Coaxial cable*
+] Used in cable TV and cable Internet
+] Better shielding
+] Difficult to handle (poor bend radius etc.)
+] Several stations can be attached
+] Data rates / ranges: 10's of MB/s over a few hundred m
+
+*Fiber Optics*
+] Commonly used in Internet core
+] Difficult to handle
+] Only connects two stations
+] Immune to EM interference
+] Data rates / ranges: 10s of GB/s up to multiple TB/s, tens to hundreds of km
+
+###Unguided Transmission Media
+In unguided media, signal propagates in *all directions*
+
+*Acoustic transmission (air / water)*1
+] Data rates / ranges: 10s to 100s KB/s, 100s of m, few km
+
+*Terrestial radio*
+] Uses radio frequencies (RF bands go from 20 KHz to 300 GHz, practical bands are sub-100 GHZ)
+] Used for access networks
+] Supports mobile hosts and clients
+] Eg. WiFi, Mobile Broadband
+] Data rates / distances: Depends on band used, e.g. 10s of m for wifi but a few km for WWAN.
+] Saves on expensive cabling
+
+*Satellite radio* 
+] Links two far away ground stations over very long distance
+] Broadcast signals e.g. satellite TV
+] Long range phone e.g. emergency phone
+] GEO vs LEO
+]] GEO satellites are stationary relative to ground, but slow link speed
+]] LEO have faster, lower latency link BUT move fast so many satellites are needed for consistent coverage
+] Iridium, Starlink, CubeSat
+
+###Bit Errors
+] Signal is distorted during transmission
+] Reciever must guess the distorted bits
+] Rate at which it guesses wrong is called *bit error rate*
+
+*Packet Loss*
+] Retransmit damaged packets
+] re fill this shit later
+
+###Throughput
+] Need to choose a definition for throughput
+] Measures the amount of data recieved per unit of time
+
+
+##Network Structures
+
+*Client-Server Paradigm*
+] Server applications:
+]] Run on an end host
+]] Need an address that is known to clients
+]] Are ready to accept service requests and respond to them
+]] Usually run all the time and support several clients
+] Clients:
+]] Don't normally communicate with each other
+]] When ^n^ different clients request the same service, the server has to deliver it ^n^ times
+] Server infrastructurr:
+]] Servers are dedicated, powerful computers
+]] Running a single server introduces a *single point of failure*
+]] Big services are run over many servers to ensure avilability
+
+
+*Peer-to-Peer Paradigm*
+] In P2P networks there is:
+]] usually no dedicated server host
+]] No seperation of roles; each host sends & recieves data
+]] No requirement for any individual host to be always available
+Many P2P hosts take a hybrid approach, where there is a central server keeping track of the available hosts, whereas the actual data transfer is P2P. E.g. BitTorrent, Napster
+
+
+##Circuit- and Packet-Switching
+
+###Traffic: A Key Network Design Factor
+*Any network is expected to carry a certain class of traffic*
+E.g:
+] the POTS (plain old telephone system) carried voice traffic
+] The Internet carries WWW, P2P, video, etc.
+
+*IMPORTANT:* The design of a network is ^strongly^ influenced by the type of traffic it is supposed to carry!
+
+
+###Circuit Switching
+*Voice / CBR Traffic*
+In *POTS* voice is transmitted digitally, the analog voice signal is A/D converted with fixed sampling rate and resolution. e.g. ISDN uses 8kHz sample rate with 8-bit resolution, which requires 64kbit/s. The cellular network introduced *voice compression*, which allows ot to use much less bandwisth - around 7kbit/s. Circuit switching provides a *fixed* rate of transmission. However, the network ^must^ maintain this rate, otherwise transmission quality will significantly decrease.
+
+*Circuit switching for CBR*
+In circuit switching, we establish a dedicated *circuit* bewteen end points for the duration of the call. This can be thought of as a virtual 'cable'. The connection exists in three phasees:
+] *Connection setup:* Identify route, set aside resources in switching elements and links, so that resources are ^guaranteed^
+] *Connection usage:* Use the established connection to transmit the CBR data - the pre-reserved resources guarantee that the quality of this connection is not influenced by others
+] *Connection teardown:* Free up the resources that were reserved.
+
+*Important properties of circuit switching:*
+] A routing decision is made *only once*
+] A connection has its resources guaranteed
+] Any spare bandwidth in a given connection cannot be reused by other connections
+] Connection setup takes time
+] Connection setup may fail when there is no route or insufficient resources
+] Most complex step is connection setup
+
+
+###Packet Switching
+Packet switching is the dominant switching technology of the modern day. Many applications have time-varying data rates. This is called *Variable Bit Rate (VBR)* or *bursty* traffic. Circuit switching isn't very useful for this type of traffic as there is a lot of wasted bandwidth due to reserved resources. Therefore, a more flexible system is needed - this is called *packet switching*.
+
+*Internet Traffic*
+] Data flows are segmented into *packets*
+] Packets are a basic unit of transmission, ^not^ connections
+] A packet consists of:
+]] A *packet header* containing meta information about the packet, e.g. address fields
+]] The *packet payload*
+]] Possibly a *packet trailer* for error detection and correction
+] Packets are transmitted ^individually^ and ^independently^
+] There is no concept of a connection, packets can be sent immediately ^without^ having to set up any state/resource reservation
+
+*Consequences of Packet Switching*
+Let's call a sequence of packets between the same source-destination pair a *flow*. Because each packet is routed individually, different packets in the same flow can take different routes. Because there is no resource reservation, there is ^virtually *no* guarantee^ that packets will be delivered. IP (Internet Protocol) is a 'best effort' service - no guarantee of delivery. THis is compensated for by the use of TCP. 
+
+*IMPORTANT:* Routers in packet-switched networks perform much more complex processing than switching fabrics in circuit-switched networks.

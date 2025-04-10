@@ -1,0 +1,68 @@
+#ENCE 260
+
+##Course Overview
+] C Programming (Term 3)
+]] No lectures for this part
+] Computer Architecture
+] Embedded Systems (UC Fun Kit | Term 4)
+]] *Fun Kit Features:*
+]]] Atmega 32u2
+]]] 5x7 LED matrix
+]]] Joystick
+]]] IR communication module 
+] Capstone Project - 2-player pong (2 microcontrollers)
+
+###Grading
+] Assignment 1 : 10%
+] Assignment 2: 10%
+] Quizzes: 10%
+] Lab Test 20%
+] Exam: 50%
+
+<hr>
+
+#Computer Architecture
+
+##What is a computer?
+] Desktop PC
+] Laptops
+] Tablets
+] Phones
+] Embedded Computers - Smaller and more specific
+]] Smartwatches
+]] USB Power supply
+]] Football computer - checks for handballs
+]] Fridges, other appliances
+]] Cars - ECU, safety systems, infotainment, etc.
+
+Embedded systems will usually have one *specific* task.
+
+####The three fundamental parts of Computer Architecture:
+] Programming
+]] C Programming
+] Physics
+]] How functionality is achieved
+] Math
+]] Booleans Logic
+]] Digital Analysis
+
+####System Architecture
+] The CPU
+]] Arithmetic
+]] Logic Evaluation
+]] Flow Control
+]] Connected to Internal Peripheals via the Control bus
+]] Connected to Memory via Control and Address buses
+] Memory
+]] C prog -> pr.c -> pr.out -> Computer memory
+]] The list of instructions
+]] Program variables
+]] Connected to CPU via Data bus
+
+####Boolean Logic
+Computers work in boolean logic - 1s and 0s.
+Can be represented in several ways
+] Numerical value: 0, 1
+] Booleans: TRUE, FALSE
+] Voltage: LOW, HIGH
+
